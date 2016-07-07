@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using KonardTestLibrary;
+using Platform.Data.Core.Pairs;
 
 namespace hwapp
 {
@@ -8,8 +9,8 @@ namespace hwapp
     {
         public static void Main(string[] args)
         {
-            var lib = new Library();
-            Console.WriteLine(lib.Add(1, 2));
+            var startup = new Startup();
+            Console.WriteLine(startup.Invoke(new object()).GetAwaiter().GetResult());
             Console.WriteLine("Hello World!");
         }
     }
@@ -19,7 +20,7 @@ namespace hwapp
         public async Task<object> Invoke(object input)
         {
             var lib = new Library();
-            return (object)lib.Add(1, 2);
+            return lib.Add(1, 2) + LinksMemoryManager.DefaultLinksSizeStep;
         }
     }
 }

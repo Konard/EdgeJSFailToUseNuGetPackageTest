@@ -5,7 +5,8 @@
     "emitEntryPoint": true
   },
   "dependencies": {
-    "KonardTestLibrary" : "0.0.2"
+    "KonardTestLibrary" : "0.0.2",
+    "Platform.Data.Core": "0.0.7"
   },
   "frameworks": {
     "netcoreapp1.0": {
